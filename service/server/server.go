@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"hpcfusion/service/queue"
+	"hpcfusion/service/bash"
 )
 
 func main() {
-	fmt.Println(queue.AllowHistory())
+	r, _ := bash.Run("cat /Users/zhijie.fang/go/src/hpcfusion/mock/example")
+	fmt.Print(r)
 }
