@@ -15,7 +15,8 @@ func IsInstall() bool {
 
 //AllowHistory check history function
 func AllowHistory() bool {
-	s, _ := bash.Run("qmgr -c 'l s'")
+	b, _ := bash.Run("qmgr -c 'l s'")
+	s := b.String()
 	i := strings.Index(s, "job_history_enable")
 	if i == -1 {
 		return false
